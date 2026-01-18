@@ -16,6 +16,10 @@ h1 + p {
     text-align: center;
     padding-bottom: 0;
     margin-bottom: 0;
+    text-transform: uppercase;
+}
+p {
+    line-height: 1.5em;
 }
 
 hr{
@@ -24,6 +28,7 @@ hr{
 }
 h1{
     text-align: center;
+    padding: 30px 40px;
 }
 
 div p:nth-of-type(2){
@@ -35,6 +40,7 @@ div p:nth-of-type(3){
 }
 li{
     padding: 10px;
+    line-height: 1.6em;
 
 }
 
