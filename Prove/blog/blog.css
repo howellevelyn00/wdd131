@@ -25,7 +25,7 @@ header, footer {
 .main-nav li { padding: 10px; }
 .main-nav a { color: #b30059; text-decoration: none; font-weight: bold; }
 
-#movie-list {
+#book-list {
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -38,12 +38,12 @@ header, footer {
 
 .book-info p { margin: 0; } /* Keeps them close together */
 
-.movie { text-align: center; }
+.book { text-align: center; }
 
-.movie h2 { color: #b30059; margin: 10px 0; }
+.book h2 { color: #b30059; margin: 10px 0; }
 
-.movie img {
-    max-width: 150px;
+.book img {
+    max-width: 200px;
     margin: 0 auto;
     display: block;
 }
@@ -52,7 +52,7 @@ header, footer {
 @media (min-width: 700px) {
     .main-nav { justify-content: flex-end; }
 
-    #movie-list {
+    #book-list {
         display: grid;
         /* Sidebar (1fr) and Main Content (3fr) */
         grid-template-columns: 1fr 3fr;
@@ -61,7 +61,7 @@ header, footer {
         gap: 20px;
         align-items: start;
     }
-    .movie{
+    .book{
         border-left: 2px solid orange;
         padding-left: 20px;
     }
@@ -73,14 +73,14 @@ header, footer {
         margin-top: 20px;
     }
 
-    .movie {
+    .book{
         grid-column: 2;
         text-align: left;
     }
 
-    .movie h2 { margin-top: 0; }
+    .book h2 { margin-top: 0; }
 
-    .movie img {
+    .book img {
         margin-left: 0; /* Align image to the left of the content area */
         max-width: 200px;
         margin: 0 auto;
