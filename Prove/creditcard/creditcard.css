@@ -1,0 +1,44 @@
+.credit-card {
+            width: 350px;
+            background: #d1d1d1;
+            padding: 20px;
+            border-radius: 15px;
+            font-family: sans-serif;
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.699);
+            position: absolute;
+        }
+ .container{
+    position: relative;
+    width: 350px;
+    height: 250px;
+
+}
+#front-card{
+    z-index: 2;
+}
+#back-card{
+    z-index: 1;
+    top: 35px;
+    left: 105px;
+}
+        .form-group { margin-bottom: 15px;}
+        label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 5px; }
+        input { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #999; }
+        .row { display: flex; gap: 10px; }
+        .row > div { flex: 1; }
+        div hr { border: none; border-top: 40px solid black; margin-bottom: 90px; }
+
+        .submit-btn {
+            position:absolute;
+            top: 320px;
+            left: 380px;
+            width: 90px;
+            padding: 10px;
+            background-color: rgba(211, 211, 211, 0.336);
+            color: black;
+            border: 1px solid black;
+            border-radius: 5px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.699);
+            font-size: 16px;
+            cursor: pointer;
+        }
