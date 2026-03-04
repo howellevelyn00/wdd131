@@ -19,7 +19,7 @@ max-width: 100%;
 list-style-type: none;
 display: flex;
 gap: 1em;
-flex-direction:column;
+flex-direction: column;
 }
 .meta-card{
     display: flex;
@@ -29,7 +29,7 @@ flex-direction:column;
 }
 .gallery{
     display: flex;
-    flex: wrap;
+    flex-wrap: wrap;
     gap: 1em;
     justify-content: center;
 
@@ -52,10 +52,10 @@ margin-top: 50px;
     .media-card{
         flex-direction: row;
     }
-    .media-card img {
+    .media-card-image {
         flex: 0 1 250px;
     }
-    .media-card content {
+    .media-card-content {
         flex: 0 1 60ch;
     }
 }
