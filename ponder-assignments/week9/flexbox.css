@@ -19,9 +19,10 @@ max-width: 100%;
 list-style-type: none;
 display: flex;
 gap: 1em;
-flex-direction: column;
+flex-direction: row;
+justify-content: flex-end;
 }
-.meta-card{
+.media-card{
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -45,10 +46,7 @@ margin-top: 50px;
 }
 
 @media screen and (min-width: 550px) {
-    .main-nav{
-        flex-direction: row;
-        justify-content: flex-end;
-    }
+
     .media-card{
         flex-direction: row;
     }
