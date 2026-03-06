@@ -1,0 +1,150 @@
+*{
+    box-sizing: border-box;
+}
+body {
+  font-family: "Caveat", cursive;
+  margin: auto;
+  max-width: 1280px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+header{
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 2em;
+}
+.logo{
+    height: 80px;
+    margin-bottom: 10px;
+}
+form{
+    display: flex;
+    border: 1px solid #333;
+    padding: 0.5em;
+    width: 100%;
+    margin-top: 1em;
+}
+
+form button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+#search-bar{
+    border: none;
+    flex-grow: 1;
+    font-family: inherit;
+    outline: none;
+    padding: 5px;
+    font-size: 1.2rem;
+}
+
+main{
+    border: 2px solid #333;
+    padding: 1.5em;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+main{
+    flex: 1 1 460px;
+}
+
+.recipe-image{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.recipe-details{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.discription{
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 2px 8px;
+    font-family: inherit;
+    align-self: flex-start;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    width: 60px;
+}
+
+.recipe-title{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #2e86c1;
+    font-family: "Caveat", cursive;
+}
+
+.rating{
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+footer{
+    width: 100%;
+    max-width: 800px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.social img{
+    width: 30px;
+    margin: 0 5px;
+}
+
+.attribution{
+    font-size: 0.8rem;
+    color: blue;
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    main{
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .recipe-image{
+        flex: 0 1 300px;
+        width: 60%;
+        padding-left: 20px;
+    }
+
+    footer{
+        margin-top: 2em;
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .discription{
+        justify-content: center;
+    }
+    .social{
+        display: flex;
+        gap: 10px;
+    }
+    .social img{
+        width: 32px;
+    }
+    p{
+        flex: 0 1 60ch;
+    }
+}
