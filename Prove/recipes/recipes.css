@@ -3,7 +3,7 @@
 }
 body {
   font-family: "Caveat", cursive;
-  margin: auto;
+  margin: 0;
   max-width: 1280px;
   padding: 1em;
   display: flex;
@@ -15,19 +15,21 @@ header{
     text-align: center;
     width: 100%;
     max-width: 1000px;
-    margin-bottom: 2em;
+    margin-bottom: 20px;
 }
 .logo{
-    height: 80px;
-    margin-bottom: 10px;
+    width: 150px;
+    display: block;
+    margin: 0 auto 10px;
 }
 form{
     display: flex;
+    justify-content: center;
     border: 1px solid #333;
     padding: 0.5em;
     width: 100%;
-    margin-top: 1em;
 }
+
 
 form button{
     background: none;
@@ -65,9 +67,7 @@ main{
 }
 
 .recipe-details{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 15px;
 }
 
 .discription{
@@ -90,7 +90,7 @@ main{
 }
 
 .rating{
-    font-size: 1.2rem;
+    display: block;
     margin-bottom: 15px;
 }
 
@@ -144,7 +144,10 @@ footer{
     .social img{
         width: 32px;
     }
-    p{
-        flex: 0 1 60ch;
+}
+
+@media (max-width: 767px) {
+    .recipe-details p{
+        display: none;
     }
 }
