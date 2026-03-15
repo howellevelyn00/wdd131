@@ -24,38 +24,32 @@
     <link rel="icon" href="/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+
+
 
     <!-- One Apple Touch Icon (iOS home screen) -->
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
                     
     <link rel="stylesheet" href="recipes.css">
+    <script src="recipes.js" defer></script>
 </head>
 <body>
     <header>
-        <img src="logo.jpg" alt="Recipe logo" class="logo">
-        <form> <input type="search" placeholder="Search..." name="search" id="search-bar"> <button type="submit">Search</button>
+        <div class = "header-content">
+            <img src="images/recipe-book.png" alt="Recipe book logo" class="logo">
+            <h1>RecipeBook</h1>
+        </div>
+        <form> 
+            <input type="search" placeholder="Search..." name="search" id="search-bar"> <button type="submit"><img style="width: 100%; height: auto;" src="images/search.svg" alt="Search icon"></button>
         </form>
+        <hr>
     </header>
     <main>
-        <img src="apple_crisp.jpg" alt="Apple Crisp" class="recipe-image">
-        <div class="recipe-details">
-            <button class="discription" aria-label="description">dessert</button>
-            <h1 class="recipe-title">Apple Crisp</h1>
-        
-            <span
-            class="rating"
-            role="img"
-            aria-label="Rating: 4 out of 5 stars"
-            >
-            <span aria-hidden="true" class="icon-star">⭐</span>
-            <span aria-hidden="true" class="icon-star">⭐</span>
-            <span aria-hidden="true" class="icon-star">⭐</span>
-            <span aria-hidden="true" class="icon-star">⭐</span>
-            <span aria-hidden="true" class="icon-star-empty">☆</span>
-            </span>
-        
-
-            <p>An apple crisp is a warm, comforting dessert made with cinnamon‑spiced apples baked under a buttery oat topping. As it cooks, the apples turn soft and sweet while the topping becomes golden and crunchy, creating a cozy treat that’s perfect with a scoop of vanilla ice cream.</p>
+        <div id = "recipe-container">
+            
         </div>    
     </main>
     <footer>
@@ -69,3 +63,4 @@
     
 </body>
 </html>
+
