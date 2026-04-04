@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +10,15 @@
     <script defer src="portfolio.js"></script>
 
 </head>
+
 <body>
     <header>
         <div class="mode">
             <div class="theme-switch-wrapper">
                 <span id="mode-label">Dark Mode</span>
                 <label class="theme-switch" for="checkbox">
-                <input type="checkbox" id="checkbox">
-                <div class="slider round"></div>
+                    <input type="checkbox" id="checkbox">
+                    <span class="slider round"></span>
                 </label>
             </div>
         </div>
@@ -38,7 +40,7 @@
         </div>
         <div class="hero-content">
             <div class="contact-links">
-                <a href="mailto:Howellevelyn00@gmail.com">Email</a> | 
+                <a href="mailto:Howellevelyn00@gmail.com">Email</a> |
                 <a href="https://www.linkedin.com/in/evelyn-howell-a7055931a">LinkedIn</a>
             </div>
         </div>
@@ -88,15 +90,18 @@
             <div id="game-container">
                 <canvas id="gameCanvas" width="600" height="200"></canvas>
                 <div id="game-ui">
-                    <span id="score-display">Score: <span id="score-val">0</span> | High: <span id="high-score-val">0</span></span>
+                    <span id="score-display">Score: <span id="score-val">0</span> | High: <span
+                            id="high-score-val">0</span></span>
                     <div id="game-overlay">
-                        <h3 id="game-over-text"></h3>
+                        <h3 id="game-over-text">Ready to play?</h3>
                         <button id="start-btn">Start Game</button>
                     </div>
                 </div>
             </div>
-            <p class="game-instructions">Use <strong>Up Arrow / Space</strong> to jump and <strong>Down Arrow</strong> to duck.</p>
+            <p class="game-instructions">Use <strong>Up Arrow / Space</strong> to jump and <strong>Down Arrow</strong>
+                to duck.</p>
         </section>
     </main>
 </body>
+
 </html>

@@ -11,7 +11,7 @@ const projects = [
         title: "Mission Statement",
         description: "A professional landing page focused on typography and clean design to highlight core values and goals.",
         imgSrc: "images/mission_project.jpg",
-        imgAlt: "Mission statement page preview",
+        imgAlt: "Mission statement page preview ",
         tech: "HTML, CSS",
         link: " https://howellevelyn00.github.io/wdd131/Prove/mission/index.html"
     },
@@ -63,7 +63,7 @@ function switchTheme(e) {
         body.classList.remove('dark-mode');
         modeLabel.textContent = "Dark Mode"; // Show "Dark Mode" when in Light
         localStorage.setItem('theme', 'light');
-    }    
+    }
 }
 
 // Event listener for the switch
@@ -97,7 +97,7 @@ function displayProjects(projectList) {
                 <a href="${project.link}" target="_blank" class="project-link">View Github Code →</a>
             </div>
         `;
-        
+
         projectsGrid.appendChild(article);
     });
 }
@@ -170,7 +170,7 @@ if (canvas) {
             y: 0,
             passed: false
         };
-        
+
         if (isFlying) {
             // High enough to duck under, low enough to hit if standing
             obstacle.y = canvas.height - groundHeight - player.baseHeight - 5;
@@ -193,7 +193,7 @@ if (canvas) {
     function draw() {
         // Clear canvas softly to allow theme changing support
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
+
         // Draw ground line
         ctx.fillStyle = body.classList.contains('dark-mode') ? '#444' : '#ccc';
         ctx.fillRect(0, canvas.height - groundHeight, canvas.width, 2);
@@ -201,7 +201,7 @@ if (canvas) {
         // Draw Player
         ctx.fillStyle = body.classList.contains('dark-mode') ? '#4db8ff' : '#2596be';
         ctx.fillRect(player.x, player.y, player.width, player.height);
-        
+
         // Player Eye
         ctx.fillStyle = body.classList.contains('dark-mode') ? '#121212' : '#041014';
         const eyeY = player.isDucking ? 4 : 8;
@@ -227,14 +227,14 @@ if (canvas) {
 
         // Deal with ducking specifically
         if (player.isDucking) {
-             const duckY = canvas.height - groundHeight - player.duckHeight;
-             if (player.y < duckY) {
-                 player.dy += player.gravity; // Still in the air but ducking
-             } else {
-                 player.dy = 0;
-                 player.y = duckY;
-                 player.isJumping = false;
-             }
+            const duckY = canvas.height - groundHeight - player.duckHeight;
+            if (player.y < duckY) {
+                player.dy += player.gravity; // Still in the air but ducking
+            } else {
+                player.dy = 0;
+                player.y = duckY;
+                player.isJumping = false;
+            }
         }
 
         // Game progression
@@ -242,7 +242,7 @@ if (canvas) {
         scoreVal.textContent = Math.floor(score);
         frameCount++;
 
-        if (frameCount % Math.max(30, 100 - Math.floor(score/2)) === 0) {
+        if (frameCount % Math.max(30, 100 - Math.floor(score / 2)) === 0) {
             spawnObstacle();
         }
 
@@ -267,7 +267,7 @@ if (canvas) {
                 i--;
             }
         }
-        
+
         // Speed up over time
         gameSpeed += 0.002;
     }
@@ -299,15 +299,15 @@ if (canvas) {
             }
             return;
         }
-        
+
         if (e.code === 'Space' || e.code === 'ArrowUp') {
             e.preventDefault(); // Stop page scrolling
             if (!player.isJumping) {
                 player.dy = -player.jumpForce;
                 player.isJumping = true;
                 if (player.isDucking) {
-                   player.isDucking = false;
-                   player.height = player.baseHeight;
+                    player.isDucking = false;
+                    player.height = player.baseHeight;
                 }
             }
         } else if (e.code === 'ArrowDown') {
@@ -331,11 +331,11 @@ if (canvas) {
             player.height = player.baseHeight;
             // readjust position if on ground
             if (!player.isJumping) {
-                 player.y = player.baseY;
+                player.y = player.baseY;
             }
         }
     });
-    
+
     // Draw initial state before starting
     draw();
 }
