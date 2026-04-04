@@ -27,13 +27,111 @@ Fonts are separated by a | */
   --nav-hover-background-color: var(--primary-color);
 }
 
-/*  Look around below...but DON'T CHANGE ANYTHING! */
 
+/* --- normal styling--- */
 body {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4em;
+  padding: 2em;
   font-size: 18px;
+}
+
+/* --- theme Switch Styling --- */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 15px;
+}
+
+#mode-label {
+    font-family: var(--heading-font);
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    width: 50px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 16px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 16px;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* --- Dark Mode Colors --- */
+body.dark-mode {
+    --primary-color: #4db8ff;
+    --secondary-color: #ffffff;
+    --accent1-color: #2596be;
+    --accent2-color: #121212;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .project-card { background: #1e1e1e; }
+body.dark-mode .card-body h3 { color: var(--primary-color); }
+body.dark-mode .entry { border-left-color: var(--primary-color); }
+nav ul{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+/* --- navigation Styling --- */
+nav li{
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: var(--nav-link-color);
+  font-family: var(--heading-font);
+}
+nav a:hover {
+  color: var(--nav-hover-link-color);
+  background-color: var(--nav-hover-background-color);
 }
 img {
   display: block;
@@ -45,6 +143,7 @@ h3,
 h4,
 h5,
 h6 {
+  text-align: center;
   font-family: var(--heading-font);
   color: var(--headline-color-on-white);
 }
@@ -57,11 +156,161 @@ hr {
   background: var(--accent1-color);
 }
 header {
-  padding: 1em;
+  padding: 0;
   text-align: center;
   color: var(--paragraph-color-on-color);
+  overflow: hidden;
+  position: relative;
   background-color: var(--paragraph-background-color);
 }
+
+/* --- hero img Styling --- */
+#hero-image-container{
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+.hero img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: brightness(70%);
+}
+
+/* --- Flex Card Layout Styles --- */
+
+/* 1. Main Flex Container */
+/* Target both the class and the ID used in HTML (#projects-grid) */
+.project-grid,
+#projects-grid {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap to a second row */
+  justify-content: center;
+  gap: 30px;
+  padding: 2em 0;
+  box-sizing: border-box;
+}
+
+.project-card {
+  /* two-column layout: each card tries to take ~50% minus gap */
+  flex: 1 1 calc(50% - 30px);
+  max-width: calc(50% - 30px);
+  min-width: 300px; /* ensures cards don't get too narrow on small screens */
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+body.dark-mode .project-card {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+}
+
+#mode-label {
+    font-family: var(--heading-font);
+    font-size: 0.8rem;
+    color: white; /* Change this to white so it pops against the dark header */
+}
+/* 3. The Top Image Container (matching your sketch's rectangle) */
+.card-header {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency, or adjust as needed */
+    border-bottom: 2px solid #ddd; /* Separator line like in your sketch */
+    background-color: #f8f9fa; /* Placeholder background color */
+}
+.card-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Make sure any image inside takes up the full space */
+.card-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps image ratio while filling the rectangle */
+}
+
+/* 4. The Content Body (matching your sketch's space) */
+.card-body {
+    padding: 20px; /* Adds space around the text */
+    flex-grow: 1; /* Makes sure the card body expands to fill empty space */
+}
+
+.card-body h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: var(--secondary-color); /* Using your color palette */
+    margin-bottom: 10px;
+}
+
+.card-body p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+    padding: 0; /* Removing extra padding from standard p tag */
+}
+
+/* 5. The Project Link Style */
+.project-link {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: var(--primary-color); /* Using your color palette */
+    color: white !important; /* Ensure high contrast */
+    text-decoration: none;
+    border-radius: 4px;
+    font-family: var(--heading-font);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.project-link:hover {
+    background-color: var(--accent1-color); /* Darker blue on hover */
+}
+
+/* 1. Improved Hero Section for Readability */
+#hero-text {
+    /* Instead of just centering, give it a background "pill" for contrast */
+    background: rgba(4, 16, 20, 0.7); /* Using your secondary color with transparency */
+    padding: 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px); /* Adds a modern frosted glass effect */ 
+}
+
+#hero-text h1 {
+    color: var(--primary-color);
+    /* White text stands out better against the dark backdrop */
+}
+
+/* 2. Professional Entry Styling */
+.entry {
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--primary-color); /* Adds a "track" line for visual flow */
+}
+
+.entry h3 {
+    margin-bottom: 0.2rem;
+    color: var(--secondary-color);
+}
+
+/* 3. Skill Chips */
+/* Instead of plain text, make your skills look like 'chips' or 'tags' */
+.skills-grid div {
+    display: inline-block;
+    background: var(--primary-color);
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 20px;
+    font-family: var(--heading-font);
+    font-size: 0.9rem;
+}
+
+
 header > h1,
 header > h2 {
   color: var(--headline-color-on-color);
@@ -119,6 +368,7 @@ nav a {
   min-width: 120px;
   text-decoration: none;
   padding: 10px;
+  transition: all 0.3s ease;
 }
 nav a:link,
 nav a:visited {
@@ -176,3 +426,21 @@ nav a:hover {
   border-top: 1px solid;
   border-right: 1px solid;
 }
+
+@media (min-width: 800px){
+  #hero-image-container {
+    margin: 0 auto;
+    width: 60%;
+    border-radius: 0 0 15px 15px; /* Adds a nice curve to the bottom edges */
+  }
+  #hero-text h1 {
+    font-size: 3rem;
+  }
+
+  #hero-text h2 {
+    font-size: 1.5rem;
+  }
+  
+
+}
+
