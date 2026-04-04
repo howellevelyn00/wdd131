@@ -12,13 +12,13 @@
 <body>
     <header>
         <div class="mode">
-            <li class="theme-switch-wrapper">
+            <div class="theme-switch-wrapper">
                 <span id="mode-label">Dark Mode</span>
                 <label class="theme-switch" for="checkbox">
-                <input type="checkbox" id="checkbox" />
+                <input type="checkbox" id="checkbox">
                 <div class="slider round"></div>
                 </label>
-            </li>
+            </div>
         </div>
         <nav>
             <ul>
@@ -31,10 +31,10 @@
     <section class="hero">
         <div id="hero-image-container">
             <img src="images/me.jpg" alt="Evelyn Marie Howell" class="hero-image">
-            <div id="hero-text">
-                <h1>Evelyn Marie Howell</h1>
-                <h2>Computer Science Student & Software Developer</h2>
-            </div>
+        </div>
+        <div id="hero-text">
+            <h1>Evelyn Marie Howell</h1>
+            <h2>Computer Science Student & Software Developer</h2>
         </div>
         <div class="hero-content">
             <div class="contact-links">
@@ -81,6 +81,21 @@
                 <div><strong>Web:</strong> HTML5, CSS3, UI/UX Design</div>
                 <div><strong>Tools:</strong> JSON Processing, Version Control</div>
             </div>
+        </section>
+
+        <section id="fun-game">
+            <h2>Take a break!</h2>
+            <div id="game-container">
+                <canvas id="gameCanvas" width="600" height="200"></canvas>
+                <div id="game-ui">
+                    <span id="score-display">Score: <span id="score-val">0</span> | High: <span id="high-score-val">0</span></span>
+                    <div id="game-overlay">
+                        <h3 id="game-over-text"></h3>
+                        <button id="start-btn">Start Game</button>
+                    </div>
+                </div>
+            </div>
+            <p class="game-instructions">Use <strong>Up Arrow / Space</strong> to jump and <strong>Down Arrow</strong> to duck.</p>
         </section>
     </main>
 </body>

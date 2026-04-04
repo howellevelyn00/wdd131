@@ -34,6 +34,8 @@ body {
   margin: 0 auto;
   padding: 2em;
   font-size: 18px;
+  background: linear-gradient(135deg, #f0f8ff 0%, #e0f0ff 100%); /* added lit light mode background */
+  min-height: 100vh;
 }
 
 /* --- theme Switch Styling --- */
@@ -45,9 +47,9 @@ body {
 }
 
 #mode-label {
-    font-family: var(--heading-font);
-    font-size: 0.8rem;
-    color: var(--secondary-color);
+  font-family: var(--heading-font);
+  font-size: 0.8rem;
+  color: var(--paragraph-color-on-color);
 }
 
 .theme-switch {
@@ -105,7 +107,7 @@ body.dark-mode {
     --secondary-color: #ffffff;
     --accent1-color: #2596be;
     --accent2-color: #121212;
-    background-color: #121212;
+    background: #121212;
     color: #e0e0e0;
 }
 
@@ -161,22 +163,56 @@ header {
   color: var(--paragraph-color-on-color);
   overflow: hidden;
   position: relative;
+}
+
+/* Top thin mode bar (uses primary color from variables) */
+.mode {
   background-color: var(--paragraph-background-color);
+  padding: 0.35rem 0;
 }
 
 /* --- hero img Styling --- */
 #hero-image-container{
-  position: relative;
-  width: 100%;
-  height: 350px;
+  width: 70vw; /* always 70% of the viewport width */
+  max-width: 1200px;
+  margin: 1em auto 0.5em auto; /* added 1em top gap */
+  border-radius: 20px; /* round up the corners */
   overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* make lit */
 }
-.hero img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.hero img,
+.hero-image {
+  width: 70vw; /* 70% of viewport width */
+  max-width: 100%;
+  height: auto; /* keep natural aspect ratio */
+  display: block;
+  margin: 0 auto;
   object-position: center 20%;
   filter: brightness(70%);
+  border-radius: 20px; /* round up the corners */
+}
+
+/* ensure the hero text sits beneath the image and is centered */
+#hero-text {
+  background-color: var(--nav-background-color);
+  color: var(--paragraph-color-on-color);
+  padding: 20px;
+  border-radius: 8px;
+  width: 70vw;
+  max-width: 1200px;
+  margin: 0.5em auto 1.5em auto;
+  text-align: center;
+}
+
+#hero-text h1 {
+  color: var(--primary-color);
+  margin: 0;
+}
+
+#hero-text h2 {
+  color: var(--paragraph-color-on-color);
+  margin-top: 0.5rem;
+  font-weight: 400;
 }
 
 /* --- Flex Card Layout Styles --- */
@@ -207,12 +243,6 @@ header {
 body.dark-mode .project-card {
     background-color: #1e1e1e;
     border: 1px solid #333;
-}
-
-#mode-label {
-    font-family: var(--heading-font);
-    font-size: 0.8rem;
-    color: white; /* Change this to white so it pops against the dark header */
 }
 /* 3. The Top Image Container (matching your sketch's rectangle) */
 .card-header {
@@ -354,10 +384,13 @@ p.colored {
 }
 
 nav {
-  background-color: var(--nav-background-color);
+  background: rgba(4, 16, 20, 0.7); /* same as hero text */
+  backdrop-filter: blur(5px);
   line-height: 3em;
   text-align: center;
   font-size: 1.2em;
+  border-radius: 0 0 12px 12px; /* look modern */
+  margin-bottom: 1em; /* space between it and other content */
 }
 nav {
   list-style-type: none;
@@ -427,11 +460,97 @@ nav a:hover {
   border-right: 1px solid;
 }
 
+/* --- Fun Game Styles --- */
+#fun-game {
+    margin: 3rem auto;
+    text-align: center;
+}
+
+#game-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 4px solid var(--primary-color);
+    border-radius: 8px;
+    background: #f8f9fa;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+body.dark-mode #game-container {
+    background: #2a2a2a;
+    border-color: var(--accent1-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+canvas {
+    display: block;
+    width: 100%; /* Make responsive */
+    height: auto;
+}
+
+#score-display {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-family: var(--heading-font);
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+body.dark-mode #score-display {
+    color: var(--primary-color);
+}
+
+#game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-over-text {
+    color: white;
+    margin: 0 0 1rem 0;
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+#start-btn {
+    padding: 10px 20px;
+    font-family: var(--heading-font);
+    font-size: 1.2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#start-btn:hover {
+    background-color: var(--accent1-color);
+}
+
+.game-instructions {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
 @media (min-width: 800px){
   #hero-image-container {
-    margin: 0 auto;
+    margin: 1.5em auto 0;
     width: 60%;
-    border-radius: 0 0 15px 15px; /* Adds a nice curve to the bottom edges */
+    border-radius: 20px; /* consistent smooth curves */
   }
   #hero-text h1 {
     font-size: 3rem;
